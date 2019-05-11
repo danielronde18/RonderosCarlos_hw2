@@ -38,6 +38,7 @@ def transfor(xonsen,yonsen):
 
 SS=xonsen[1]-xonsen[0]
 freqx=fftfreq(len(xonsen),SS)
+
 plt.figure()
 plt.plot(freqx,abs(transfor(xonsen,yonsen)))
 plt.title("Transformada de fourier")
@@ -82,4 +83,36 @@ Pxx, freqs, bins, im = ax2.specgram(abs(transfor(xonsensum,yonsensum)), NFFT=NFF
 
 
 plt.savefig("espectrograma_originalSumado.pdf")
+
+
+senaltemblor=np.genfromtxt("temblor.txt",skip_header=3)
+
+dt2 = 0.207155
+Fs = int(1.0 / dt2)
+t2 = np.arange(-9374.0, 9270.0, dt2)
+
+NFFT2 = 1024
+
+fig, (ax1, ax2) = plt.subplots(nrows=2)
+ax1.plot(t2, senaltemblor)
+Pxx, freqs, bins, im = ax2.specgram(senaltemblor, NFFT=NFFT2, Fs=Fs, noverlap=900)
+plt.colorbar(im).set_label(u'Intensidad ')
+plt.xlabel(u'Tiempo ')
+plt.ylabel(u'Frecuencia ')
+plt.savefig("espectrograma_temblor.pdf")
+
+
+SS2=abs(senaltemblor[1]-senaltemblor[0])
+#print(SS2)
+freqtemblor=fftfreq(len(senaltemblor),SS2)
+#print(freqtemblor)
+fftvalores=abs(fft(senaltemblor))
+
+plt.figure()
+plt.plot(freqtemblor,fftvalores)
+plt.title("Transformada de fourier temblor")
+plt.xlabel("Frecuencia")
+plt.ylabel("Transformada")
+plt.savefig("transformada_temblor.pdf")
+
 
