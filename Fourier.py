@@ -68,7 +68,7 @@ ax1.plot(t3, abs(transfor(xonsen,yonsen)))
 Pxx, freqs, bins, im = ax2.specgram(abs(transfor(xonsen,yonsen)), NFFT=NFFT3, Fs=Fs3, noverlap=900)
 
 plt.savefig("espectrograma_original.pdf")
-plt.show()
+
 
 
 dt4 = 0.00000009364
@@ -82,4 +82,4 @@ Pxx, freqs, bins, im = ax2.specgram(abs(transfor(xonsensum,yonsensum)), NFFT=NFF
 
 
 plt.savefig("espectrograma_originalSumado.pdf")
-plt.show()
+
