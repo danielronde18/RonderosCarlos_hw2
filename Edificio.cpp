@@ -29,3 +29,24 @@ int main(){
     
  return 0;   
 }
+
+void condiciones_iniciales(double& u1, double& u2, double& u3, double& v1, double& v2, double& v3){
+	u1 = 0.0;
+	u2 = 0.0;
+	u3 = 0.0;
+	v1 = 0.0;
+	v2 = 0.0;
+	v3 = 0.0;
+}
+
+double eq1( double v1 ){
+	return v1;
+}
+
+double eq2( double v2 ){
+	return v2;
+}
+
+double eq3( double v3 ){
+	return v3;
+}
