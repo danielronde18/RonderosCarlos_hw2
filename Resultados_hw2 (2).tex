@@ -1,5 +1,15 @@
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\author{Carlos Ronderos}
+\title{Tarea 2, 2019-01 Metodos Computacionales}
+
+\begin{document}
+\maketitle
+
 \section{Fourier}
-en esta seccion se realizo el analisis de dos ondas senosoidales en el cual la primera señal estaba conformado por la suma de dos señales y en el segundo caso se encontraban a destiempo es decir primero se generaba una y luego la otra
+
+En esta sección se realizó el análisis de dos ondas sinusoidales en la cual la primera señal estaba conformada por la suma de dos señales y en el segundo caso se encontraba un grupo de señales que se generaban en diferentes tiempos es decir una de las señales se generaba con anterioridad a la otra.
 
 \begin{figure}[h!]
 \centering
@@ -8,7 +18,7 @@ en esta seccion se realizo el analisis de dos ondas senosoidales en el cual la p
 \label{Fig.}
 \end{figure}
 
-posteriormente se realizo la implementacion propia de la transformada de fourier para despues ser utilizada para obtener la transformaada de los datos de signal.dat y signalsuma.dat
+Por otra parte, se realizó la implementación propia de la transformada de Fourier en la cual realice una corrección con el manejo de suma para que no me arrojara un error de tipo Warning, para posteriormente ser utilizada en la obtención de la transformada de Fourier de los datos signal.dat y signalsuma.dat.
 
 \begin{figure}[h!]
 \centering
@@ -24,7 +34,8 @@ posteriormente se realizo la implementacion propia de la transformada de fourier
 \label{Fig.}
 \end{figure}
 
-En esta seccion tambien se le realizo un espectrograma a los valores obtenidos por la implementacion de la transformada de fourier a los dos grupos de datos de signal.dat y signalsuma.dat
+De las gráficas fue posible apreciar que de signalSuma.dat se presentaron 4 picos de frecuencia con mismos valores en su amplitud mientras  que de los datos de signal.dat se obtuvieron 4 picos pero con diferentes amplitudes ya que los valores obtenidos en los extremos son mayores a los picos intermedios.
+Por otra parte, se realizaron los respectivos espectrogramas de las transformadas de los datos signal.dat y signalSuma.dat
 
 \begin{figure}[h!]
 \centering
@@ -40,8 +51,8 @@ En esta seccion tambien se le realizo un espectrograma a los valores obtenidos p
 \label{Fig.}
 \end{figure}
 
-para terminar con esta seccion se cargaron los datos de temblor.txt en donde se realizo un agrafica de la señal vs el tiempo ademas de un espectrograma 
-
+Para terminar con esta sección se cargaron los datos de temblor.txt en donde se realizó una gráfica en forma de subplot donde se puede apreciar los datos de temblor.txt vs t en donde se logra observar el punto en que sucede el temblor. Seguidamente se puede apreciar el espectrograma del temblor en el que se puede ver que la región antes del movimiento se aprecia de un color diferente al pos-temblor en el que además se ve una curva decayendo con una coloración diferente (amarilla).
+  
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{espectrograma_temblor.pdf}
@@ -49,7 +60,7 @@ para terminar con esta seccion se cargaron los datos de temblor.txt en donde se 
 \label{Fig.}
 \end{figure}
 
-ademas se realizo la implemntacion de la transformada de fourier con los paquetes de scipy a los datos provenientes de temblor.txt
+Ademas, se realizo la transformada de fourier con los paquetes de scipy a los datos de temblor.txt en donde se pueden aprecair 3 picos de frecuencia dos de los cuales tienen una intensidad menor que el valor central en 0.0 
 
 \begin{figure}[h!]
 \centering
@@ -59,42 +70,50 @@ ademas se realizo la implemntacion de la transformada de fourier con los paquete
 \end{figure}
 
 
-\section{ODE}
+\section{Edificios ODE}
+
+Después de realizar el tratamiento de los datos y obtención de los diferentes casos en los que se variaba la frecuencia de forzamiento se obtuvo que la gráfica para la amplitud máxima en función de la frecuencia es:  
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{amplitud_maxima.pdf}
-\caption{Transformada temblor.txt }
+\includegraphics[scale=0.7]{amplitud_maxima.pdf}
+\caption{Amplitud máxima }
 \label{Fig.}
 \end{figure}
+
+En esta se aprecia que la máxima amplitud se logra en la frecuencia de forzamiento se 0.65 además se observó la presencia de dos picos adicionales los cuales disminuían su amplitud en función de la frecuencia  
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.5]{plot1.pdf}
-\caption{Transformada temblor.txt }
+\includegraphics[scale=0.6]{plot1.pdf}
+\caption{frecuencia 0.65 resonancia }
 \label{Fig.}
 \end{figure}
-
+la gráfica 1 corresponde al valor de frecuencia 0.65 la cual concuerda con la frecuencia de resonancia de nuestro sistema por tal razón los bloques se mueven simétricamente. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{plot2.pdf}
-\caption{Transformada temblor.txt }
+\caption{Frecuencia 1.3 caos }
 \label{Fig.}
 \end{figure}
+
+La gráfica 2 corresponde al valor de frecuencia 1.3, en la gráfica se muestra el efecto que se genera en los bloques al moverse independientemente, ya que estos no perciben la fuerza al mismo tiempo. Por tal razón, los bloques se mueven caóticamente sin aumentar su amplitud. 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{plot3.pdf}
-\caption{Transformada temblor.txt }
+\caption{Frecuencia 2.5 simetria  }
 \label{Fig.}
 \end{figure}
+
+en la gráfica 3 corresponde al valor de frencuencia de 2.5 en la grafica se muestran valores periodicos para este sistema este valor es proximo a uno de los picos de amplitud mas especificamente en el pico con menor valor de amplitud de la grafica de maximas amplitudes.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.5]{plot4.pdf}
-\caption{Transformada temblor.txt }
+\caption{Frecuencia 4 caos }
 \label{Fig.}
 \end{figure}
-
+La gráfica 4 corresponde al valor de frecuencia 4, en la gráfica se muestra el efecto que se genera en los bloques al moverse independientemente, ya que estos no perciben la fuerza al mismo tiempo. Por tal razón, los bloques se mueven caóticamente sin aumentar su amplitud. 
 
 \end{document}
