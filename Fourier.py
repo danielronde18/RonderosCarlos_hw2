@@ -39,4 +39,22 @@ def transfor(xonsen,yonsen):
     suma=suma/N
     return suma
 
+SS=xonsen[1]-xonsen[0]
+freqx=fftfreq(len(xonsen),SS)
+plt.figure()
+plt.plot(freqx,abs(transfor(xonsen,yonsen)))
+plt.title("Transformada de fourier")
+plt.xlabel("Frecuencia")
+plt.ylabel("Transformada")
+plt.xlim(-750,750)
+plt.savefig("RonderosCarlos_transformada.pdf")
 
+SS4=xonsensum[1]-xonsensum[0]
+freqx4=fftfreq(len(xonsensum),SS4)
+plt.figure()
+plt.plot(freqx4,abs(transfor(xonsensum,yonsensum)))
+plt.title("Transformada de fourier")
+plt.xlabel("Frecuencia")
+plt.ylabel("Transformada")
+plt.xlim(-750,750)
+plt.savefig("RonderosCarlos_transformada_originalSuma.pdf")
