@@ -38,6 +38,18 @@ void condiciones_iniciales(double& u1, double& u2, double& u3, double& v1, doubl
 	v2 = 0.0;
 	v3 = 0.0;
 }
+double eq4( double t, double u1, double u2, double v1, double w ){
+	return 1/m*(-g*v1 + k*(u2 - 2*u1) + sin( w*t));
+}
+
+double eq5( double u1, double u2, double u3, double v2 ){
+	return 1/m*(-g*v2 + k*(u1 - 2*u2 + u3) );
+}
+
+double eq6( double u2, double u3, double v3 ){
+	return 1/m*(-g*v3 + k*(u2 - u3));
+}
+
 
 double eq1( double v1 ){
 	return v1;
