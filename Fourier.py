@@ -26,9 +26,6 @@ plt.xlabel("x")
 plt.ylabel("y(x)")
 plt.savefig("RonderosCarlos_signalSumasub.pdf")
 
-
-
-
 def transfor(xonsen,yonsen):
     N=len(xonsen)
     pi=np.pi
@@ -58,3 +55,31 @@ plt.xlabel("Frecuencia")
 plt.ylabel("Transformada")
 plt.xlim(-750,750)
 plt.savefig("RonderosCarlos_transformada_originalSuma.pdf")
+
+
+
+dt3 = 0.00003022
+#t3 = np.arange(2.38558376754426e-08, 0.06187167870047863, dt3)
+t3 = np.linspace(2.38558376754426e-08, 0.06187167870047863, 2048)
+NFFT3 = 1024  # the length of the windowing segments
+Fs3 = int(1.0 / dt3)  # the sampling frequency
+fig, (ax1, ax2) = plt.subplots(nrows=2)
+ax1.plot(t3, abs(transfor(xonsen,yonsen)))
+Pxx, freqs, bins, im = ax2.specgram(abs(transfor(xonsen,yonsen)), NFFT=NFFT3, Fs=Fs3, noverlap=900)
+
+plt.savefig("espectrograma_original.pdf")
+plt.show()
+
+
+dt4 = 0.00000009364
+t4 = np.arange(2.609337192143404e-11,0.00019175507296341149 , dt4)
+
+NFFT4 = 1024  
+Fs4 = int(1.0 / dt4)  
+fig, (ax1, ax2) = plt.subplots(nrows=2)
+ax1.plot(t4, abs(transfor(xonsensum,yonsensum)))
+Pxx, freqs, bins, im = ax2.specgram(abs(transfor(xonsensum,yonsensum)), NFFT=NFFT4, Fs=Fs4, noverlap=900)
+
+
+plt.savefig("espectrograma_originalSumado.pdf")
+plt.show()
