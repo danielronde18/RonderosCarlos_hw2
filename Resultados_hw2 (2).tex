@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\author{Carlos Ronderos}
+\title{Tarea 2, 2019-01 Metodos Computacionales}
+
+\begin{document}
+\maketitle
+
+\section{Fourier}
+en esta seccion se realizo el analisis de dos ondas senosoidales en el cual la primera señal estaba conformado por la suma de dos señales y en el segundo caso se encontraban a destiempo es decir primero se generaba una y luego la otra
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{RonderosCarlos_signalSumasub.pdf}
+\caption{grafica signal.dat y signalsuma.dat}
+\label{Fig.}
+\end{figure}
+
+posteriormente se realizo la implementacion propia de la transformada de fourier para despues ser utilizada para obtener la transformaada de los datos de signal.dat y signalsuma.dat
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{RonderosCarlos_transformada.pdf}
+\caption{Transformada signal.dat }
+\label{Fig.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{RonderosCarlos_transformada_originalSuma.pdf}
+\caption{Transformada signalsuma.dat }
+\label{Fig.}
+\end{figure}
+
+En esta seccion tambien se le realizo un espectrograma a los valores obtenidos por la implementacion de la transformada de fourier a los dos grupos de datos de signal.dat y signalsuma.dat
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{espectrograma_original.pdf}
+\caption{Espectrograma de Transformada signal.dat }
+\label{Fig.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{espectrograma_originalSumado.pdf}
+\caption{Espectrograma de Transformada signalSuma.dat }
+\label{Fig.}
+\end{figure}
+
+para terminar con esta seccion se cargaron los datos de temblor.txt en donde se realizo un agrafica de la señal vs el tiempo ademas de un espectrograma 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{espectrograma_temblor.pdf}
+\caption{grafico señal vs t y Espectrograma de temblor.txt }
+\label{Fig.}
+\end{figure}
+
+ademas se realizo la implemntacion de la transformada de fourier con los paquetes de scipy a los datos provenientes de temblor.txt
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{transformada_temblor.pdf}
+\caption{Transformada temblor.txt }
+\label{Fig.}
+\end{figure}
+
+
+
+\section{ODE}
+
+
+\end{document}
